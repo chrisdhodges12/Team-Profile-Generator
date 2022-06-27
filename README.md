@@ -2,7 +2,7 @@
   ## Description
   This command-line app prompts the user for information about their professional team. The data is then used to generate a webpage.  The user is first prompted to add a manager to the project which entails name, id number, email, and office room number.  The user can then add engineers and interns to the team.  The questions alos ask for name, email, and id for those roles, however it also prompts for a github username for engineers and a school for interns.  The answeres to the prompts are sent through a template which generates the data into an HTML file.
 
-  Created with javascript, node.js, inquirer, jest, HTML, and bootsrtap.
+  Created with javascript, node.js, inquirer(version 8.2.4), jest, HTML, and bootsrtap.
 
   ## Table of Contents
 
