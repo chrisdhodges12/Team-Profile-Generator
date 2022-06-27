@@ -32,7 +32,7 @@ const getEngineer = function (engineer) {
                     <li class="list-group-item">
                         Email: <a href="mailto:${engineer.email}">Send Email</a></li>
                     <li class="list-group-item">
-                        GitHub: <a href="github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
+                        GitHub: <a href="github.com/${engineer.github}" target="_blank" rel="noopener noreferrer">${engineer.github}</a></li>
                 </ul>
             </div>
         </div>
@@ -97,7 +97,6 @@ const generate = function (employees) {
       <title>My Team</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <link rel="stylesheet" href="../templates/css/style.css">
   </head>
   <body>
       <div class="container-fluid">
@@ -118,5 +117,4 @@ const generate = function (employees) {
   </html>`;
 };
 
-// export to index
 module.exports = generateHTML;
