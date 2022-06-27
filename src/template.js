@@ -1,6 +1,6 @@
 const getManager = function (manager) {
   return `
-    <div class="col-sm-4 d-flex justify-content-center">
+    <div class="col-sm-3 d-flex justify-content-center">
         <div class="card w-100">
             <div class="card-header">
                 <h2 class="card-title"> Manager</h2>
@@ -20,7 +20,7 @@ const getManager = function (manager) {
 
 const getEngineer = function (engineer) {
   return `
-    <div class="col-sm-4 d-flex justify-content-center">
+    <div class="col-sm-3 d-flex justify-content-center">
         <div class="card w-100">
             <div class="card-header">
                 <h2 class="card-title"> Engineer</h2>
@@ -32,7 +32,7 @@ const getEngineer = function (engineer) {
                     <li class="list-group-item">
                         Email: <a href="mailto:${engineer.email}">Send Email</a></li>
                     <li class="list-group-item">
-                        GitHub: <a href="${engineer.github}"></a></li>
+                        GitHub: <a href="github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
                 </ul>
             </div>
         </div>
@@ -41,7 +41,7 @@ const getEngineer = function (engineer) {
 
 const getIntern = function (intern) {
   return `
-    <div class="col-sm-4 d-flex justify-content-center">
+    <div class="col-sm-3 d-flex justify-content-center">
         <div class="card w-100">
             <div class="card-header">
             <h2 class="card-title"> Intern</h2>
