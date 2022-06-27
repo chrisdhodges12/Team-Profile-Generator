@@ -5,7 +5,6 @@ const getManager = function (manager) {
             <div class="card-header">
                 <h2 class="card-title"> Manager</h2>
                 <h3 class="card-title>">${manager.name}</h3>
-                
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
@@ -16,7 +15,7 @@ const getManager = function (manager) {
                 </ul>
             </div>
         </div>
-    </div>`
+    </div>`;
 };
 
 const getEngineer = function (engineer) {
@@ -26,7 +25,6 @@ const getEngineer = function (engineer) {
             <div class="card-header">
                 <h2 class="card-title"> Engineer</h2>
                 <h3 class="card-title>">${engineer.name}</h3>
-              
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
@@ -34,11 +32,11 @@ const getEngineer = function (engineer) {
                     <li class="list-group-item">
                         Email: <a href="mailto:${engineer.email}">Send Email</a></li>
                     <li class="list-group-item">
-                        GitHub: <a href="${engineer.github}"></a>li>
+                        GitHub: <a href="${engineer.github}"></a></li>
                 </ul>
             </div>
         </div>
-    </div>`
+    </div>`;
 };
 
 const getIntern = function (intern) {
@@ -54,11 +52,11 @@ const getIntern = function (intern) {
                     <li class="list-group-item">ID: ${intern.id}</li>
                     <li class="list-group-item">
                         Email: <a href="mailto:${intern.email}">Send Email</a></li>
-                    <li class="list-group-item">School: ${intern.school}li>
+                    <li class="list-group-item">School: ${intern.school}</li>
                 </ul>
             </div>
         </div>
-    </div>`
+    </div>`;
 };
 
 generateHTML = (data) => {
