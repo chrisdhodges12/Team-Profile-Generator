@@ -1,12 +1,10 @@
+const generatePage = require("./src/template");
+const fs = require("fs");
+const inquirer = require("inquirer");
+
 const Manager = require("./lib/Manager.js");
 const Intern = require("./lib/Intern.js");
 const Engineer = require("./lib/Engineer.js");
-
-const {writeFile, copyFile } = require('./utils/generate-site.js');
-const generatePage = require("./src/template.js");
-
-
-const inquirer = require("inquirer");
 
 const employeeArray = [];
 
@@ -72,7 +70,7 @@ const promptManager = () => {
       const manager = new Manager(name, id, email, officeNumber);
 
       employeeArray.push(manager);
-    });
+    })
 };
 
 const promptEmployees = () => {
@@ -81,7 +79,7 @@ const promptEmployees = () => {
       {
         type: "list",
         name: "role",
-        message: "What is the employee's role?",
+        message: "What is the role of the employee you would like to add?",
         choices: ["Engineer", "Intern"],
       },
       {
@@ -163,10 +161,10 @@ const promptEmployees = () => {
       let { name, id, email, role, github, school, confirmAddMore } = employeeInput;
       let employee;
 
-      if (role == "Intern") {
-        employee = new Intern(name, id, email, school);
-      } else if (role == "Engineer") {
-        employee = new Engineer(name, id, email, github);
+      if (role === "Intern") {
+        employee = new Intern (name, id, email, school);
+      } else if (role === "Engineer") {
+        employee = new Engineer (name, id, email, github);
       }
       employeeArray.push(employee);
 
@@ -175,27 +173,21 @@ const promptEmployees = () => {
       } else {
         return employeeArray;
       }
-    });
+    })
 };
 
 
+function generate() {
+    // const pageHTML = generatePage(employeeArray);
+    fs.writeFile("./dist/index.html", generatePage(employeeArray), (err) => {
+      if (err) throw err;
+      console.log("Portfolio complete! Check out index.html to see the output!");
+    });
+};
+
 promptManager()
   .then(promptEmployees)
-  .then(employeeArray => {
-    return generatePage(employeeArray);
-  })
-  .then(newPage => {
-    return writeFile(newPage);
-  })
-  .then(writeFileResponse => {
-    console.log(writeFileResponse);
-    return copyFile();
-  })
-  .then(copyFileResponse => {
-    console.log(copyFileResponse);
-  })
-  .catch((error) => {
-    console.log(error);
-});
+  .then (generate);
+
 
 
